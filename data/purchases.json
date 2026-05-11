@@ -55,5 +55,12 @@
     "amount": "€6.93",
     "method": "applepay",
     "timestamp": "2026-05-11T06:16:54.579Z"
+  },
+  {
+    "email": "gfdff",
+    "plan": "week4",
+    "amount": "€19.99",
+    "method": "applepay",
+    "timestamp": "2026-05-11T09:39:27.285Z"
   }
 ]

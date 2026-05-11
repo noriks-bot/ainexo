@@ -22,6 +22,19 @@ export default function CheckoutPage() {
   const [cvv, setCvv] = useState('');
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  function trackPurchase(method: string, amount: number, currency: string = 'EUR') {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Purchase', {
+        value: amount,
+        currency: currency,
+        content_name: '28-dnevni AI izziv',
+        content_type: 'product',
+        payment_method: method,
+      });
+    }
+  }
+
+
 
   async function handlePayPal() {
     setLoading(true);
@@ -36,6 +49,7 @@ export default function CheckoutPage() {
           method: 'paypal',
         }),
       });
+      trackPurchase('paypal', totalAmount);
       setDone(true);
     } finally {
       setLoading(false);
@@ -57,6 +71,7 @@ export default function CheckoutPage() {
           cardLast4,
         }),
       });
+      trackPurchase('card', totalAmount);
       setDone(true);
     } finally {
       setLoading(false);
@@ -148,6 +163,7 @@ export default function CheckoutPage() {
           onClick={async () => {
             setLoading(true);
             await fetch('/api/purchases', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, plan: selectedPlan, amount: plan.discountedPrice, method: 'googlepay', cardLast4: '' }) });
+            trackPurchase('googlepay', totalAmount);
             setDone(true);
             setLoading(false);
           }}
@@ -162,6 +178,7 @@ export default function CheckoutPage() {
           onClick={async () => {
             setLoading(true);
             await fetch('/api/purchases', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, plan: selectedPlan, amount: plan.discountedPrice, method: 'applepay', cardLast4: '' }) });
+            trackPurchase('applepay', totalAmount);
             setDone(true);
             setLoading(false);
           }}
