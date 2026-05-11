@@ -1,0 +1,59 @@
+[
+  {
+    "email": "bshsbs",
+    "plan": "week1",
+    "amount": "8.45",
+    "method": "paypal",
+    "timestamp": "2026-05-10T13:46:22.899Z"
+  },
+  {
+    "email": "rok16@gmail.com",
+    "plan": "week4",
+    "amount": "24.39",
+    "method": "card",
+    "timestamp": "2026-05-10T14:08:24.242Z",
+    "cardLast4": "3737"
+  },
+  {
+    "email": "fsafsa",
+    "plan": "week4",
+    "amount": "€19.99",
+    "method": "googlepay",
+    "timestamp": "2026-05-10T20:35:52.356Z"
+  },
+  {
+    "email": "vdvds",
+    "plan": "week4",
+    "amount": "24.39",
+    "method": "paypal",
+    "timestamp": "2026-05-10T20:39:35.080Z"
+  },
+  {
+    "email": "gdsfda",
+    "plan": "week4",
+    "amount": "€19.99",
+    "method": "applepay",
+    "timestamp": "2026-05-10T20:43:58.741Z"
+  },
+  {
+    "email": "xczxcvzx",
+    "plan": "week4",
+    "amount": "€19.99",
+    "method": "googlepay",
+    "timestamp": "2026-05-10T20:50:57.272Z"
+  },
+  {
+    "email": "r25ok",
+    "plan": "week4",
+    "amount": "€19.99",
+    "method": "applepay",
+    "timestamp": "2026-05-10T20:56:52.828Z"
+  },
+  {
+    "email": "hbbf",
+    "plan": "week1",
+    "amount": "€6.93",
+    "method": "applepay",
+    "timestamp": "2026-05-11T06:16:54.579Z"
+  }
+]

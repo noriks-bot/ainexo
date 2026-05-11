@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page fade transition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Spin animation for wheel */
+@keyframes spinWheel {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(var(--spin-degrees, 1800deg)); }
+}
+
+.spin-wheel {
+  animation: spinWheel 4s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards;
+}
+
+/* Circular progress animation */
+@keyframes circularProgress {
+  from { stroke-dashoffset: var(--circumference, 283); }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Bounce-in animation for modals */
+@keyframes bounceIn {
+  0% { opacity: 0; transform: translateY(100%); }
+  60% { transform: translateY(-8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.5s ease-out forwards;
+}
+
+/* Slide up for bottom sheet */
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+/* Pulse animation for live counter */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+/* Hide scrollbar on mobile */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+input[type="text"],
+input[type="email"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
